@@ -24,16 +24,35 @@ class App extends React.Component {
         completed: false
       }
     ]
-
+    /**********
+     * You need a property on state to hold your input value. State is an object, with a property called tasks that holds an array of objects. You need to give state another property that will hold a string. You call it taskInput in TodoForm, why not call it that here?
+     */
   };
-
-
-  render(){
+  /*********ADD THIS **************
+  handleChanges = () => {
+    **** FILL ME IN: I should be the change handler for your input in TodoForm********
+  }
+  addNewTask = (event) => {
+    **** FILL ME IN: I should be the submit handler for your TodoForm********
+  }
+  */
+  handleChanges = () => {
+    console.log("change");
+  };
+  render() {
     return (
       <div>
         <h2>Todo List</h2>
         <TodoList tasks={this.state.tasks} />
-        <TodoForm />
+        {/************** Ok, so now you have a change handler function, you need to pass it into TodoForm. You also need to give TodoForm the piece of state that represents the input value, and you will need to give it the submit handler you wrote, like this : <TodoForm handleChanges={this.handleChanges} taskInput={this.state.taskInput} addNewTask={this.addNewTask}/>
+         */}
+        <TodoForm
+          handleChanges={this.handleChanges}
+          taskInput={this.state.taskInput}
+        />
+        {/**************** 
+            If you've followed along this far, now go into TodoForm.js and console.log your props to see what is being called in
+          */}
       </div>
     );
   }
