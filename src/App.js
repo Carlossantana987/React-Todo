@@ -46,10 +46,7 @@ class App extends React.Component {
         <TodoList tasks={this.state.tasks} />
         {/************** Ok, so now you have a change handler function, you need to pass it into TodoForm. You also need to give TodoForm the piece of state that represents the input value, and you will need to give it the submit handler you wrote, like this : <TodoForm handleChanges={this.handleChanges} taskInput={this.state.taskInput} addNewTask={this.addNewTask}/>
          */}
-        <TodoForm
-          handleChanges={this.handleChanges}
-          taskInput={this.state.taskInput}
-        />
+        <TodoForm />
         {/**************** 
             If you've followed along this far, now go into TodoForm.js and console.log your props to see what is being called in
           */}
